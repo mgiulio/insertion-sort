@@ -8,14 +8,21 @@ function run() {
 	ol = document.querySelector('ol');
 	values.map(toDOMNode).forEach(ol.appendChild.bind(ol));
 	
-	var nextSwap = flatArrayIterator(
-		sort(values)
-			.map(function(swap) { return [swap[0] + 1, swap[1] + 1]; })
-	);
+	var 
+		swaps = sort(values).map(function(swap) { return [swap[0] + 1, swap[1] + 1]; }),
+		numSwaps = swaps.length,
+		swapIt = flatArrayIterator(swaps),
+		button = document.getElementsByTagName('button')[0],
+		disableBtn = function() { button.disabled = true; this.innerHTML = 'Finished'; }
+	;
 	
-	document.getElementsByTagName('button')[0].addEventListener(
-		'click', 
-		function (e) { 
+	button.addEventListener('click', 
+		runMaxTimes(
+			compose(renderSwap, swapIt), 
+			numSwaps, 
+			runMaxTimes(disableBtn, 1, noop)
+		)
+		/* function (e) { 
 			e.preventDefault(); 
 			e.stopPropagation(); 
 		
@@ -26,7 +33,8 @@ function run() {
 			}
 			else
 				renderSwap(swap[0], swap[1]);
-		}, 
+		} */
+		, 
 		false
 	);
 	
@@ -64,8 +72,10 @@ function sort(a) {
 	return swaps;
 }
 
-function renderSwap(i, j) {
+function renderSwap(swap/* i, j */) {
 	var 
+		i = swap[0],
+		j = swap[1],
 		class_i = 'pos-' + i
 		class_j = 'pos-' + j
 	;
