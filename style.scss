@@ -41,10 +41,7 @@ ol {
 	height: $array-slot-size;
 	width: $array-slot-size * $array-length;
 	
-	background: #ffc513;
 	border-radius: 5px;
-	border: 1px solid #f4b312;
-	box-shadow: 1px 1px 1px 0px rgba(0,0,0, 0.5) inset;
 }
 
 @mixin tile {
@@ -72,8 +69,6 @@ ol li {
 	font-family: Verdana, sans-serif;
 	font-weight: bold;
 	font-size: 40px;
-	
-	text-shadow: 0px 0px 2px rgba(0,0,0, 1);
 }
 
 ol li.moving {
@@ -98,11 +93,6 @@ button svg {
 	width: 60px;
 	height: 60px;
 }
-button svg path {
-	fill: #fff;
-	stroke: #000;
-	stroke-width: 0.2px;
-}
 button svg {
 	transform: rotate(0deg);
 	transition: transform 0.5s;
@@ -113,3 +103,5 @@ button:active  svg {
 button:focus {
 	outline: none;
 }
+
+@import 'color-schemes';
