@@ -105,6 +105,13 @@ button svg {
 button:active  svg {
 	transform: rotate(-360deg);
 }
+button:active {
+	background: 
+		linear-gradient(0deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		linear-gradient(270deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		orange
+	;
+}
 button:focus {
 	outline: none;
 }
