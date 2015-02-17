@@ -51,10 +51,15 @@ ol {
 	text-align: center;
 	
 	border-radius: 5px;
-	border: 1px solid;
 	
-	background: orange;
-	border-color: #ed9700;
+	background: 
+		//linear-gradient(0deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		linear-gradient(90deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		linear-gradient(180deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		//linear-gradient(270deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		orange
+	;
+	border: 1px solid #ed9700;
 	color: white;
 }
 
