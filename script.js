@@ -21,20 +21,7 @@ function run() {
 			compose(renderSwap, swapIt), 
 			numSwaps, 
 			runMaxTimes(disableBtn, 1, noop)
-		)
-		/* function (e) { 
-			e.preventDefault(); 
-			e.stopPropagation(); 
-		
-			var swap = nextSwap();
-			if (!swap) {
-				this.disabled = true;
-				this.innerHTML = 'Finished';
-			}
-			else
-				renderSwap(swap[0], swap[1]);
-		} */
-		, 
+		), 
 		false
 	);
 	
