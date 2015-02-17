@@ -13,17 +13,24 @@ function run() {
 		numSwaps = swaps.length,
 		swapIt = flatArrayIterator(swaps),
 		button = document.getElementsByTagName('button')[0],
-		disableBtn = function() { button.disabled = true; this.innerHTML = 'Finished'; }
+		btnListener = (function() {
+			var swaps = 0;
+			return function(swap, e) {
+				e.preventDefault();
+				e.stopPropagation();
+				
+				swap();
+				
+				if (++swaps === numSwaps) {
+					button.disabled = true;
+					button.innerHTML = 'Finished';
+					button.removeEventListener('click', btnListener, false);
+				}
+			}
+		})()
 	;
 	
-	button.addEventListener('click', 
-		runMaxTimes(
-			compose(renderSwap, swapIt), 
-			numSwaps, 
-			runMaxTimes(disableBtn, 1, noop)
-		), 
-		false
-	);
+	button.addEventListener('click', wrap(compose(renderSwap, swapIt), btnListener), false);
 	
 	ol.addEventListener('transitionend', function(e) {
 		e.stopPropagation();
