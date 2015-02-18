@@ -48,7 +48,7 @@ ol {
 	border-radius: 5px;
 }
 
-@mixin tile {
+ol li {
 	box-sizing: border-box;
 	width: $array-slot-size;
 	height: $array-slot-size;
@@ -56,19 +56,6 @@ ol {
 	
 	border-radius: 5px;
 	
-	background: 
-		//linear-gradient(0deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		linear-gradient(90deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		linear-gradient(180deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		//linear-gradient(270deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		orange
-	;
-	border: 1px solid #ed9700;
-	color: white;
-}
-
-ol li {
-	@include tile;
 	line-height: $array-slot-size;
 	
 	position: absolute;
@@ -94,13 +81,17 @@ p {
 	text-align: center;
 }
 button {
-	display: inline-block;
+	-webkit-appearance: none;
 	
-	@include tile;
+	display: inline-block;
+	padding: 0;
+	font-size: 0;
+	
+	border-radius: 5px;
 }
 button svg {
-	width: 60px;
-	height: 60px;
+	width: $array-slot-size;
+	height: $array-slot-size;
 }
 button svg {
 	transform: rotate(0deg);

@@ -1,10 +1,27 @@
+@mixin shaded-tile {
+	background: 
+		//linear-gradient(0deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		linear-gradient(90deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		linear-gradient(180deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		//linear-gradient(270deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
+		orange
+	;
+	border: 1px solid #ed9700;
+	color: white;
+}
+
 ol {
 	background: #ffc513;
 	border: 1px solid #f4b312;
 	box-shadow: 1px 1px 1px 0px rgba(0,0,0, 0.5) inset;
 }
 ol li {
+	@include shaded-tile;
+	
 	text-shadow: 0px 0px 2px rgba(0,0,0, 1);
+}
+button {
+	@include shaded-tile;
 }
 button svg path {
 	fill: #fff;
