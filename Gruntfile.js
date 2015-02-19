@@ -6,14 +6,14 @@ module.exports = function (grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'style.css': 'style.scss'
+					'css/style.css': 'sass/style.scss'
 				}
 			}
 		},
         autoprefixer: {
             dist: {
                 files: {
-                    'style.css': 'style.css'
+                    'css/style.css': 'css/style.css'
                 }
             }
         }
