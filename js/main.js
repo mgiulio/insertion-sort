@@ -3,6 +3,7 @@ require.config({
 });
 
 require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
+	
 	var ol;
 
 	run();
@@ -18,7 +19,7 @@ require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
 			numSwaps = swaps.length,
 			swapIt = mg.flatArrayIterator(swaps),
 			button = document.getElementsByTagName('button')[0],
-			btnListener = (function() {
+			buttonListener = (function() {
 				var swaps = 0;
 				return function(swap, e) {
 					e.preventDefault();
@@ -28,14 +29,17 @@ require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
 					
 					if (++swaps === numSwaps) {
 						button.disabled = true;
-						//button.innerHTML = 'Finished';
-						button.removeEventListener('click', btnListener, false);
+						button.removeEventListener('click', buttonListener, false);
 					}
 				}
 			})()
 		;
 		
-		button.addEventListener('click', mg.wrap(mg.compose(renderSwap, swapIt), btnListener), false);
+		button.addEventListener(
+			'click', 
+			buttonListener = mg.wrap(mg.compose(renderSwap, swapIt), buttonListener), 
+			false
+		);
 		
 		ol.addEventListener('transitionend', function(e) {
 			e.stopPropagation();

@@ -68,8 +68,7 @@ button {
 button svg {
 	width: $array-slot-size;
 	height: $array-slot-size;
-}
-button svg {
+	
 	transform: rotate(0deg);
 	transition: transform 0.5s;
 }

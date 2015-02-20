@@ -24,7 +24,10 @@ button {
 	@include shaded-tile;
 }
 button svg path {
-	fill: #fff;
-	stroke: #000;
-	stroke-width: 0.2px;
+	fill: #fdfb77;
+	stroke: #c58c12;
+	stroke-width: 0.3px;
+}
+button:disabled {
+	opacity: 0.4;
 }
