@@ -40,11 +40,6 @@ require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
 			buttonListener = mg.wrap(mg.compose(renderSwap, swapIt), buttonListener), 
 			false
 		);
-		
-		ol.addEventListener('transitionend', function(e) {
-			e.stopPropagation();
-			e.target.classList.remove('moving');
-		}, false);
 	}
 
 	function toDOMNode(value, i) {
@@ -82,14 +77,12 @@ require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
 			class_i = 'pos-' + i
 			class_j = 'pos-' + j
 		;
-		
+
 		var itemAti = ol.getElementsByClassName(class_i)[0];
 		var itemAtj = ol.getElementsByClassName(class_j)[0];
 		
 		itemAti.className = class_j;
-		itemAti.classList.add('moving');
 		itemAtj.className = class_i;
-		itemAtj.classList.add('moving');
 	}
 
 });

@@ -43,10 +43,6 @@ ol li {
 	font-size: 40px;
 }
 
-ol li.moving {
-	z-index: 2;
-}
-
 @for $i from 1 through $array-length {
 	ol li.pos-#{$i} {
 		left: $padding + ($i - 1) * $array-slot-size;
