@@ -4,14 +4,6 @@ $array-length: 10;
 $array-slot-size: 80px;
 $padding: 3px;
 
-body {
-	background-image: url(../img/diagonal-noise-trans.png);
-	background-color: #ffff00;
-	background-blend-mode: 
-		luminosity
-	;
-}
-
 ol {
 	list-style: none;
 	margin: 40px auto;
@@ -20,8 +12,6 @@ ol {
 	position: relative;
 	height: $array-slot-size;
 	width: $array-slot-size * $array-length;
-	
-	border-radius: 5px;
 }
 
 ol li {
@@ -30,17 +20,11 @@ ol li {
 	height: $array-slot-size;
 	text-align: center;
 	
-	border-radius: 5px;
-	
 	line-height: $array-slot-size;
 	
 	position: absolute;
 	top: $padding;
 	transition: left 1s;
-	
-	font-family: Verdana, sans-serif;
-	font-weight: bold;
-	font-size: 40px;
 }
 
 @for $i from 1 through $array-length {
@@ -58,8 +42,6 @@ button {
 	display: inline-block;
 	padding: 0;
 	font-size: 0;
-	
-	border-radius: 5px;
 }
 button svg {
 	width: $array-slot-size;
@@ -73,15 +55,8 @@ button:active:not(:disabled) svg {
 //button:disabled:active  svg {
 //	transform: rotate(0deg);
 //}
-button:active:not(:disabled) {
-	background: 
-		linear-gradient(0deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		linear-gradient(270deg, rgb(255, 144, 0) 0%, rgba(255, 181, 9, 0) 10%),
-		orange
-	;
-}
 button:focus {
 	outline: none;
 }
 
-@import 'color-schemes';
+@import 'skin';
