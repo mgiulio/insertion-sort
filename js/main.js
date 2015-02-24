@@ -70,7 +70,7 @@ require(['http://prjexs.dev/mg-js/mg-js.js'], function(mg) {
 		return swaps;
 	}
 
-	function renderSwap(swap/* i, j */) {
+	function renderSwap(swap) {
 		var 
 			i = swap[0],
 			j = swap[1],
