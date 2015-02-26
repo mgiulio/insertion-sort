@@ -10,14 +10,20 @@
 	color: white;
 }
 
-body {
-	background-image: url(../img/diagonal-noise-trans.png);
-	background-color: #ffca00;
-	background-blend-mode: 
-		luminosity
-	;
-}
+$stripe-1-width: 2px;
+$stripe-2-width: $stripe-1-width;
+$stripe-1-col: rgba(0,0,0, 0.1);
+$stripe-2-col: transparent;
+$angle: 135deg;
 
+html {
+	min-height: 100%;
+	background-image: repeating-linear-gradient($angle, 
+		$stripe-1-col, $stripe-1-col $stripe-1-width, 
+		$stripe-2-col $stripe-1-width, $stripe-2-col $stripe-1-width + $stripe-2-width)
+	;
+	background-color: #ffca00;
+}
 ol {
 	border-radius: 5px;
 	
