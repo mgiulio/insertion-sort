@@ -10,19 +10,35 @@
 	color: white;
 }
 
-$stripe-1-width: 2px;
+$stripe-1-width: 3px;
 $stripe-2-width: $stripe-1-width;
-$stripe-1-col: rgba(0,0,0, 0.1);
+$stripe-1-col: rgba(150,150,150, 0.1);
 $stripe-2-col: transparent;
 $angle: 135deg;
+$l: 1.4142135623730951 * ($stripe-1-width + $stripe-2-width);
+$p0: 0;
+$p1: $p0 + $stripe-1-width;
+$p2: $p1 + $stripe-2-width;
+$p3: $p2 + $stripe-1-width;
+$p4: $p3 + $stripe-2-width;
 
 html {
 	min-height: 100%;
-	background-image: repeating-linear-gradient($angle, 
+	
+	background-color: #ffca00;
+	
+	/* background-image: repeating-linear-gradient($angle, 
 		$stripe-1-col, $stripe-1-col $stripe-1-width, 
 		$stripe-2-col $stripe-1-width, $stripe-2-col $stripe-1-width + $stripe-2-width)
-	;
-	background-color: #ffca00;
+	; */
+	
+	background-image: linear-gradient($angle, 
+		$stripe-1-col $p0, $stripe-1-col $p1,
+		$stripe-2-col $p1, $stripe-2-col $p2,		
+		$stripe-1-col $p2, $stripe-1-col $p3,		
+		$stripe-2-col $p3, $stripe-2-col $p4
+	);
+	background-size: $l $l;
 }
 ol {
 	border-radius: 5px;
