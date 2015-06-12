@@ -1,6 +1,6 @@
 # About
 
-An interactive animation of the behaviour of the [insertion sort algorithm](http://en.wikipedia.org/wiki/Insertion_sort) done with CSS Transitions. 
+An [interactive animation](https://github.com/mgiulio/insertion-sort-css-transitions) of the behaviour of the [insertion sort algorithm](http://en.wikipedia.org/wiki/Insertion_sort) done with CSS Transitions. 
 
 # Usage
 
