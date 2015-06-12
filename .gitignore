@@ -1,6 +1,4 @@
 doc
 .sass-cache
 node_modules
-*.map
-*.css
 *.lnk
