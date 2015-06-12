@@ -1,4 +1,10 @@
 @import url(normalize.css);
+.title {
+  text-align: center;
+  color: #ece8e8;
+  font-family: sans-serif;
+}
+
 ol {
   list-style: none;
   margin: 40px auto;

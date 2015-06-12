@@ -1,5 +1,11 @@
 @import 'normalize.css';
 
+.title {
+	text-align: center;
+	color: #ece8e8;
+	font-family: sans-serif;
+}
+
 $array-length: 10;
 $array-slot-size: 80px;
 $padding: 3px;
